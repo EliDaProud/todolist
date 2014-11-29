@@ -1,0 +1,33 @@
+
+
+<h1>Anezka's todo list</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Deadline</th>
+      <th>Done</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr <%= task.done ? 'class=success' : 'class=danger' %> >
+        <td><%= task.name %></td>
+        <td><%= task.deadline.strftime("%d. %m. %Y") %></td>
+        <td><%= task.done %></td>
+        <td><%= link_to tag('span', :class => "glyphicon glyphicon-search"), task %></td>
+        <td><%= link_to tag('span', :class => "glyphicon glyphicon-edit"), edit_task_path(task) %></td>
+        <td><%= link_to tag('span', :class => "glyphicon glyphicon-remove"), task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>

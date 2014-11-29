@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todolist</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+	<!-- <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap.css">
+	<link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/mystyles.css">
+	<link rel="stylesheet" type="text/css" href="">
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/tasks">Kompletni To-Do list</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/tasks">Jednotlivé tasky</a></li>
+        <li class="active"><a href="/pages/tresty">Jednotlivé tresty</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+	<img src="assets/anezka.jpg" class="img-circle">
+	<%= yield %>
+</div>
+
+<footer>
+	<div class="container">
+		Made by Eli with Anezka
+	</div>	
+</footer>
+
+</body>
+</html>
